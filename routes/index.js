@@ -9,7 +9,13 @@ router.get('/', function(req, res) {
 });
 
 
+//pregunta
 router.get('/quizes/question', quizController.question);
-router.get('/quizes/answer',   quizController.answer);
+//respuesta
+ router.get('/quizes/answer',   quizController.answer);
+//autor
+router.get("/author", function(req, res) {
+		res.render("author");}
+ );
 
 module.exports = router;
