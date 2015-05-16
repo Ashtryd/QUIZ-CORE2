@@ -36,6 +36,23 @@ exports.show= function(req, res){
 	res.render('quizes/show', {quiz : req.quiz});
        
  }
+//GET quizes/new
+exports.new = function(req,res){
+  var quiz = models.Quiz.build(
+    {pregunta: "Pregunta", respuesta: "Respuesta"});
+
+  res.render('quizes/new', {quiz: quiz});
+}
+
+//GET quizes/create
+exports.create = function(req,res){
+  var quiz= models.Quiz.build(req.body.quiz);
+
+  //Guardar en la DB los datos agregados
+  quiz.save({fields: ["pregunta", "respuesta"]}).then(function(){
+    res.redirect('/quizes');
+  });
+}
 
 
 
