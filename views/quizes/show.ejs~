@@ -5,3 +5,4 @@
 
   <input type="submit" value="Enviar" <%= quiz.id %>/answer/>
  </form>
+  <p><a href="/"> Volver inicio </a></p>
